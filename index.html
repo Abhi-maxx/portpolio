@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">
+      <h1>Abhi's Portfolio</h1>
+    </div>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section id="home">
+    <div class="home-container">
+      <img src="./Photos/IMG_20240126_220108.jpg" alt="My Photo" class="profile-pic">
+      <h2 id="dynamic-text" class="text-animation">Hi, I'm Abhijeet Divekar</h2>
+      <p>Aspiring Software Developer | Web Enthusiast</p>
+      <a href="#contact" class="btn">Contact Me</a>
+    </div>
+  </section>
+  
+  <section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+      <p>
+        Hi there! My name is <strong>Abhijeet Divekar</strong>, an aspiring software developer with a passion for building web applications. I'm currently learning .NET and JavaScript to create innovative and user-friendly solutions. Apart from coding, I love trekking, exploring nature, and bike tours.
+      </p>
+      <h3>My Skills</h3>
+      <ul class="skills">
+        <li>💻 JavaScript</li>
+        <li>⚙️ .NET Development</li>
+        <li>🎨 Web Design (HTML/CSS)</li>
+        <li>📊 SQL Database Management</li>
+      </ul>
+      <h3>My Journey</h3>
+      <div class="timeline">
+        <div class="event">
+          <h4>2024</h4>
+          <p>Started learning .NET Development.</p>
+        </div>
+        <div class="event">
+          <h4>2023</h4>
+          <p>Graduated from Savitribai Phule University.</p>
+        </div>
+      </div>
+      <p>
+        🚴‍♂️ Love bike tours.<br>
+        🌿 Passionate about nature and trekking.<br>
+        📚 Always learning new technologies!
+      </p>
+      <a href="#contact" class="btn">Let’s Connect</a>
+    </div>
+  </section>
+  
+  <section id="skills">
+    <h2>Skills</h2>
+  </section>
+  <section id="projects">
+    <h2>Projects</h2>
+  </section>
+  <section id="education">
+    <h2>Education</h2>
+  </section>
+  <section id="contact">
+    <h2>Contact</h2>
+  </section>
+
+
+  <script>
+    const dynamicText = document.getElementById('dynamic-text');
+    const texts = ["Hi, I'm Abhijeet Divekar", "Welcome to my profile"];
+    const colors = ["text-color-1", "text-color-2", "text-color-3"];
+    let index = 0;
+  
+    setInterval(() => {
+      // Smoothly fade out text
+      dynamicText.style.opacity = 0;
+  
+      setTimeout(() => {
+        // Update text and add a random color class
+        index = (index + 1) % texts.length; // Toggle between 0 and 1
+        dynamicText.textContent = texts[index];
+  
+        // Remove old color classes and apply a new one
+        dynamicText.className = "text-animation";
+        dynamicText.classList.add(colors[Math.floor(Math.random() * colors.length)]);
+  
+        // Smoothly fade in text
+        dynamicText.style.opacity = 1;
+      }, 1000); // Wait for fade-out effect to complete
+    }, 3000); // Change every 3 seconds
+  </script>
+  
+</body>
+</html>
